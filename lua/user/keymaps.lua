@@ -45,7 +45,7 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Insert --
--- Press jj fast to enter
+-- Press jj fast to enter normal mode
 keymap("i", "jj", "<ESC>", opts)
 
 -- Visual --
