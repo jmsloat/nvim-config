@@ -67,6 +67,7 @@ return packer.startup(function(use)
 			require("nvim-surround").setup({})
 		end,
 	})
+  use({ "christoomey/vim-tmux-navigator"})
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" })
@@ -86,7 +87,7 @@ return packer.startup(function(use)
 	use({ "titanzero/zephyrium" })
 
 	-- cmp plugins
-	use({ "hrsh7th/nvim-cmp", commit = "8bbaeda725d5db6e4e1be2867a64b43bf547cf06" }) -- The completion plugin
+	use({ "hrsh7th/nvim-cmp", commit = "c49ad26e894e137e401b1d294948c46327877eaf" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }) -- buffer completions
 	use({ "hrsh7th/cmp-path", commit = "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1" }) -- path completions
 	use({ "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" }) -- snippet completions
