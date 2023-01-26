@@ -67,7 +67,7 @@ return packer.startup(function(use)
 			require("nvim-surround").setup({})
 		end,
 	})
-  use({ "christoomey/vim-tmux-navigator"})
+	use({ "christoomey/vim-tmux-navigator" })
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" })
@@ -77,7 +77,6 @@ return packer.startup(function(use)
 		config = function()
 			require("onedark").setup({
 				style = "deep",
-				toggle_style_key = "<leader>ts",
 			})
 		end,
 	})
@@ -106,6 +105,23 @@ return packer.startup(function(use)
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
 
+	-- Testing
+	use({
+		"nvim-neotest/neotest",
+		commit = "6676edc3078b8936df989df639900dc9a70dfc8a",
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-neotest/neotest-go",
+		},
+		config = function()
+			require("neotest").setup({
+				adapters = {
+					require("neotest-go"),
+				},
+			})
+		end,
+	})
+
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
 
@@ -122,6 +138,13 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap", commit = "6b12294a57001d994022df8acbe2ef7327d30587" })
 	use({ "rcarriga/nvim-dap-ui", commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13" })
 	use({ "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" })
+	use({
+		"leoluz/nvim-dap-go",
+		commit = "6f045a72a05a78e4071dd0880f08214a2bb1461b",
+		config = function()
+			require("dap-go").setup()
+		end,
+	})
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
