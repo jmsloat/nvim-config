@@ -8,13 +8,7 @@ if not fzf_status_ok then
 	return
 end
 
-local codesearch_ok, codesearch = pcall(require, "telescope-codesearch")
-if not codesearch_ok then
-	return
-end
-
 fzf_telescope.setup()
-codesearch.setup()
 
 local actions = require("telescope.actions")
 
@@ -33,6 +27,7 @@ telescope.setup({
 			"bazel-private-cloud",
 			"bazel-testlogs",
 			"frontend",
+			"vendor",
 		},
 		layout_strategy = "vertical",
 		mappings = {
@@ -52,12 +47,7 @@ telescope.setup({
 			override_file_sorter = true,
 			case_mode = "smart_case",
 		},
-		codesearch = {
-			experimental = false,
-			corpus = "cloud-gke",
-		},
 	},
 })
 
 telescope.load_extension("fzf")
-telescope.load_extension("codesearch")

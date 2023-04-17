@@ -88,4 +88,4 @@ keymap("n", "<leader>to", "<cmd>lua require('neotest').output_panel.toggle()<cr>
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 
 -- trouble
-keymap("n", "<leader>w", "<cmd>:TroubleToggle<cr>", opts)
+keymap("n", "<leader>w", "<cmd>:TroubleToggle document_diagnostics<cr>", opts)
