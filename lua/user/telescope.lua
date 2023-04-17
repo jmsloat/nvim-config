@@ -3,6 +3,19 @@ if not status_ok then
 	return
 end
 
+local fzf_status_ok, fzf_telescope = pcall(require, "fzf-native-nvim")
+if not fzf_status_ok then
+	return
+end
+
+local codesearch_ok, codesearch = pcall(require, "telescope-codesearch")
+if not codesearch_ok then
+	return
+end
+
+fzf_telescope.setup()
+codesearch.setup()
+
 local actions = require("telescope.actions")
 
 telescope.setup({
@@ -21,7 +34,7 @@ telescope.setup({
 			"bazel-testlogs",
 			"frontend",
 		},
-
+		layout_strategy = "vertical",
 		mappings = {
 			i = {
 				["<Down>"] = actions.cycle_history_next,
@@ -32,4 +45,19 @@ telescope.setup({
 			},
 		},
 	},
+	extensions = {
+		fzf = {
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
+		},
+		codesearch = {
+			experimental = false,
+			corpus = "cloud-gke",
+		},
+	},
 })
+
+telescope.load_extension("fzf")
+telescope.load_extension("codesearch")

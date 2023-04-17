@@ -22,6 +22,8 @@ null_ls.setup({
 		formatting.rustfmt,
 		formatting.goimports,
 		diagnostics.flake8,
-		diagnostics.golangci_lint,
+		diagnostics.golangci_lint.with({
+			extra_args = { "--fast" },
+		}),
 	},
 })

@@ -91,6 +91,7 @@ return packer.startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp", commit = "59224771f91b86d1de12570b4070fe4ad7cd1eeb" })
 	use({ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" })
+	use({ "hrsh7th/cmp-nvim-lsp-signature-help", commit = "3d8912ebeb56e5ae08ef0906e3a54de1c66b92f1" })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" }) --snippet engine
@@ -110,7 +111,7 @@ return packer.startup(function(use)
 		commit = "6676edc3078b8936df989df639900dc9a70dfc8a",
 		requires = {
 			"nvim-treesitter/nvim-treesitter",
-			"nvim-neotest/neotest-go",
+			"jmsloat/neotest-go",
 		},
 		config = function()
 			require("neotest").setup({
@@ -123,6 +124,16 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		commit = "580b6c48651cabb63455e97d7e131ed557b8c7e2",
+		run = "make",
+	})
+	-- set this in corp zshrc - can't load google plugins at home
+	if os.getenv("CORP") then
+		use({ "sso://googler@user/vintharas/telescope-codesearch.nvim" })
+		use({ "sso://googler@user/vicentecaycedo/cmp-buganizer" })
+	end
 
 	-- Treesitter
 	use({
@@ -130,20 +141,20 @@ return packer.startup(function(use)
 		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
 	})
 
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		commit = "8673926519ea61069f9c1366d1ad1949316d250e",
+	})
+
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" })
+	use({ "akinsho/git-conflict.nvim", commit = "2957f747e1a34f1854e4e0efbfbfa59a1db04af5" })
 
 	-- DAP
 	use({ "mfussenegger/nvim-dap", commit = "6b12294a57001d994022df8acbe2ef7327d30587" })
 	use({ "rcarriga/nvim-dap-ui", commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13" })
 	use({ "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" })
-	use({
-		"leoluz/nvim-dap-go",
-		commit = "6f045a72a05a78e4071dd0880f08214a2bb1461b",
-		config = function()
-			require("dap-go").setup()
-		end,
-	})
+	use({ "leoluz/nvim-dap-go", commit = "6f045a72a05a78e4071dd0880f08214a2bb1461b" })
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
