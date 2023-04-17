@@ -70,7 +70,8 @@ return packer.startup(function(use)
 			require("nvim-surround").setup({})
 		end,
 	})
-	use({ "christoomey/vim-tmux-navigator" })
+	-- use({ "christoomey/vim-tmux-navigator" })
+	use({ "aserowy/tmux.nvim", commit = "b6da35847df972f50df27d938b6e5ea09bcc8391" })
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" })
@@ -100,10 +101,11 @@ return packer.startup(function(use)
 	-- LSP
 	-- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
 	use({ "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" }) -- enable LSP
-	use({ "williamboman/mason.nvim", commit = "bfc5997e52fe9e20642704da050c415ea1d4775f" })
+	use({ "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12" })
 	use({ "williamboman/mason-lspconfig.nvim", commit = "0eb7cfefbd3a87308c1875c05c3f3abac22d367c" })
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
+	use({ "simrat39/symbols-outline.nvim", commit = "512791925d57a61c545bc303356e8a8f7869763c" })
 
 	-- Testing
 	use({
