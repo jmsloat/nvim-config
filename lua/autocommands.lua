@@ -23,12 +23,12 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 		vim.cmd("tabdo wincmd =")
 	end,
 })
-
-vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
-	callback = function()
-		vim.cmd("quit")
-	end,
-})
+--
+-- vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
+-- 	callback = function()
+-- 		vim.cmd("quit")
+-- 	end,
+-- })
 
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()
@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = { "*.java" },
+	pattern = { "*.java", "*.go", "*.lua" },
 	callback = function()
 		vim.lsp.codelens.refresh()
 	end,
