@@ -19,6 +19,7 @@ M.opts = {
     selection_caret = " ",
     path_display = { "smart" },
     file_ignore_patterns = { ".git/", "node_modules" },
+    layout_strategy = 'vertical',
     mappings = {
       i = {
         ["<Down>"] = actions.move_selection_next,
