@@ -18,7 +18,17 @@ M.opts = {
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-    file_ignore_patterns = { ".git/", "node_modules" },
+    file_ignore_patterns = { 
+      ".git/",
+      "node_modules",
+      "old",
+      "bazel-bin",
+      "bazel-out",
+      "bazel-private-cloud",
+      "bazel-testlogs",
+      "frontend",
+      "vendor",
+    },
     layout_strategy = 'vertical',
     mappings = {
       i = {

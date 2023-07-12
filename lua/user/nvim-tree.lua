@@ -87,6 +87,7 @@ function M.config()
       update_cwd = true,
     },
     renderer = {
+      symlink_destination = false,
       icons = {
         glyphs = {
           default = "",
@@ -124,7 +125,7 @@ function M.config()
       },
     },
     view = {
-      width = 30,
+      adaptive_size = true,
       side = "left",
     },
   }
