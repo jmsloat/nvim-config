@@ -8,17 +8,21 @@ local M = {
       "ahmedkhalf/project.nvim",
       commit = "8c6bad7d22eef1b71144b401c9f74ed01526a4fb",
     },
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+    },
   },
 }
 
 local actions = require "telescope.actions"
+local telescope = require "telescope"
 
 M.opts = {
   defaults = {
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "smart" },
-    file_ignore_patterns = { 
+    file_ignore_patterns = {
       ".git/",
       "node_modules",
       "old",
@@ -30,6 +34,7 @@ M.opts = {
       "vendor",
     },
     layout_strategy = 'vertical',
+    path_display = {truncate = 3},
     mappings = {
       i = {
         ["<Down>"] = actions.move_selection_next,
@@ -40,6 +45,19 @@ M.opts = {
       },
     },
   },
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    }
+  },
+  config = function(_, opts) 
+    telescope.load_extension('fzf')
+    require('telescope').setup(opts)
+  end
 }
+
 
 return M
