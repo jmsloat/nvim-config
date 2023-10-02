@@ -3,6 +3,9 @@ return {
     formatting = {
       ["local"] = "gke-internal.googlesource.com",
     },
+    env = {
+      GOPACKAGESDRIVER = "${workspaceRoot}/build/tools/vscode/gopackagesdriver.sh",
+    },
     build = {
       directoryFilters = {
           "-node_modules",

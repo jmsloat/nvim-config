@@ -34,7 +34,7 @@ function M.config()
       formatting.goimports,
       diagnostics.flake8,
       diagnostics.golangci_lint.with({
-        extra_args = { "--fast" },
+        extra_args = { "--fast", "--build-tags goexperiment.boringcrypto" },
 		}),
     },
   }
