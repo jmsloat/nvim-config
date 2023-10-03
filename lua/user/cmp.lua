@@ -35,6 +35,9 @@ local M = {
       "hrsh7th/cmp-nvim-lua",
       commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6",
     },
+    {
+      url = 'sso://user/vicentecaycedo/cmp-buganizer',
+    }
   },
   event = {
     "InsertEnter",
@@ -151,6 +154,8 @@ function M.config()
       { name = "luasnip" },
       { name = "buffer" },
       { name = "path" },
+      { name = "path" },
+      { name = "buganizer" },
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,

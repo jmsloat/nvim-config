@@ -1,7 +1,12 @@
 local M = {
-  "kyazdani42/nvim-tree.lua",
-  commit = "f5d970d4506f385b29534252d8c15a782fa53034",
+  "nvim-tree/nvim-tree.lua",
+  commit = "7dcda5d3b6d2fce7b7baa471b7ad6525383e27bb",
   event = "VimEnter",
+  dependencies = {
+    {
+      "nvim-tree/nvim-web-devicons",
+    },
+  }
 }
 
 local function on_attach(bufnr)
