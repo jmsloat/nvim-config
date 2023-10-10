@@ -89,7 +89,10 @@ function M.config()
     on_attach = on_attach,
     update_focused_file = {
       enable = true,
-      update_cwd = true,
+      update_root = true,
+      ignore_list = {
+        "org",
+      },
     },
     renderer = {
       symlink_destination = false,

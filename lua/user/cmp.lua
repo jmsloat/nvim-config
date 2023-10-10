@@ -154,7 +154,7 @@ function M.config()
       { name = "luasnip" },
       { name = "buffer" },
       { name = "path" },
-      { name = "path" },
+      { name = "orgmode" },
       { name = "buganizer" },
     },
     confirm_opts = {
