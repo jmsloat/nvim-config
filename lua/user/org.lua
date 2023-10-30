@@ -24,7 +24,8 @@ function M.config()
   require('orgmode').setup({
     org_agenda_files = '~/org/**/*',
     org_default_notes_file = '~/org/inbox.org',
-    win_split_mode = 'float',
+    win_split_mode = 'horizontal',
+    org_todo_keywords = {'TODO', 'WAITING', 'TESTING', '|', 'DONE'}
   })
 end
 
