@@ -25,7 +25,8 @@ function M.config()
     org_agenda_files = '~/org/**/*',
     org_default_notes_file = '~/org/inbox.org',
     win_split_mode = 'horizontal',
-    org_todo_keywords = {'TODO', 'WAITING', 'TESTING', '|', 'DONE'}
+    org_todo_keywords = {'TODO', 'WAITING', 'TESTING', '|', 'DONE'},
+    org_startup_folded = 'content',
   })
 end
 
