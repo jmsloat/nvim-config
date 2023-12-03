@@ -6,6 +6,7 @@ M.servers = {
   "bashls",
   "jsonls",
   "gopls",
+  "kotlin_language_server",
 }
 
 return M

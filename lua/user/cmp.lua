@@ -35,15 +35,20 @@ local M = {
       "hrsh7th/cmp-nvim-lua",
       commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6",
     },
-    {
-      url = 'sso://user/vicentecaycedo/cmp-buganizer',
-    }
   },
   event = {
     "InsertEnter",
     "CmdlineEnter",
   },
 }
+
+if os.getenv("CORP") then
+  M.dependencies.insert(
+    {
+      url = 'sso://user/vicentecaycedo/cmp-buganizer',
+    }
+  )
+end
 
 function M.config()
   local cmp = require "cmp"
@@ -85,7 +90,7 @@ function M.config()
     Copilot = "",
   }
 
-  cmp.setup {
+  opts = {
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -169,6 +174,13 @@ function M.config()
       ghost_text = true,
     },
   }
+  if os.getenv("CORP") then
+    opts.sources.insert( { name = "buganizer "})
+  end
+
+  cmp.setup(opts)
 end
+
+
 
 return M

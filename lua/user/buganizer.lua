@@ -13,4 +13,6 @@ function M.config()
 end
 
 return M
+else
+  return {}
 end
