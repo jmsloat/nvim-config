@@ -43,7 +43,7 @@ local M = {
 }
 
 if os.getenv("CORP") then
-  M.dependencies.insert(
+  table.insert(M.dependencies,
     {
       url = 'sso://user/vicentecaycedo/cmp-buganizer',
     }
