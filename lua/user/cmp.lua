@@ -175,7 +175,7 @@ function M.config()
     },
   }
   if os.getenv("CORP") then
-    opts.sources.insert( { name = "buganizer "})
+    table.insert(opts.sources, { name = "buganizer "})
   end
 
   cmp.setup(opts)
