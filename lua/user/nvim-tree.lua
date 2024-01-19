@@ -136,6 +136,9 @@ function M.config()
       adaptive_size = true,
       side = "left",
     },
+    git = {
+      timeout = 2000,
+    }
   }
 end
 

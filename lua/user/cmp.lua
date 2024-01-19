@@ -161,6 +161,7 @@ function M.config()
       { name = "path" },
       { name = "orgmode" },
       { name = "buganizer" },
+      { name = "neorg" },
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
