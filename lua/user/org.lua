@@ -27,6 +27,7 @@ function M.config()
     win_split_mode = 'horizontal',
     org_todo_keywords = {'TODO', 'WAITING', 'TESTING', '|', 'DONE'},
     org_startup_folded = 'content',
+    indent = "indent",
   })
 end
 

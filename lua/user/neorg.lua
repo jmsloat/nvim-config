@@ -16,6 +16,7 @@ function M.config()
       ["core.defaults"] = {}, -- Loads default behaviour
       ["core.concealer"] = {}, -- Adds pretty icons to your documents
       ["core.ui.calendar"] = {}, -- calendar
+      ["core.completion"] = { config = { engine = "nvim-cmp", name = "[Neorg]" } },
       ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
           workspaces = {
@@ -27,4 +28,4 @@ function M.config()
   }
 end
 
-return {}
+return M

@@ -43,7 +43,7 @@ local M = {
 }
 
 if os.getenv("CORP") then
-  M.dependencies.insert(
+  table.insert(M.dependencies,
     {
       url = 'sso://user/vicentecaycedo/cmp-buganizer',
     }
@@ -161,6 +161,7 @@ function M.config()
       { name = "path" },
       { name = "orgmode" },
       { name = "buganizer" },
+      { name = "neorg" },
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
@@ -175,7 +176,7 @@ function M.config()
     },
   }
   if os.getenv("CORP") then
-    opts.sources.insert( { name = "buganizer "})
+    table.insert(opts.sources, { name = "buganizer "})
   end
 
   cmp.setup(opts)
