@@ -2,6 +2,11 @@ local M = {
   "mfussenegger/nvim-dap",
   commit = "b3d4408e29d924fe130c9397a7c3b3630b3ea671",
   event = "VeryLazy",
+  dependencies = {
+    {
+      "leoluz/nvim-dap-go"
+    },
+  },
 }
 
 function M.config()
