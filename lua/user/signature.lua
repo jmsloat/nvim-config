@@ -6,6 +6,9 @@ local M = {
 
 function M.config()
   require('lsp_signature').setup{}
+
+  vim.keymap.set({ 'n' }, '<C-S-k>', function()       require('lsp_signature').toggle_float_win()
+    end, { silent = true, noremap = true, desc = 'toggle signature' })
 end
 
 return M
