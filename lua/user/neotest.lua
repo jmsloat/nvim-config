@@ -1,7 +1,7 @@
 local M = {
   "nvim-neotest/neotest",
   event = "BufReadPre",
-  commit = "fb0b31ae1dcdc7d68af5c66db4434ae5ebeffcfc",
+  commit = "89a5b1fc22ee5d459262955fe564c3d14e35fd67",
   dependencies = {
     {
       "nvim-lua/plenary.nvim",
@@ -14,20 +14,20 @@ local M = {
     },
     {
       "nvim-neotest/neotest-go",
-      commit = "f2580cad67ef0181403cf65858ab638ffd3ede9f",
-    }
+      commit = "ba5d536304ed6971f00d16b48ec26997622ffb43",
+    },
   },
 }
 
 function M.config()
-  require('neotest').setup {
+  require("neotest").setup {
     adapters = {
-      require('neotest-go')({
+      require "neotest-go" {
         experimental = {
           test_table = true,
-        }
-      })
-    }
+        },
+      },
+    },
   }
 end
 
