@@ -20,15 +20,16 @@ local M = {
     },
     {
       "saadparwaiz1/cmp_luasnip",
-      commit = "18095520391186d634a0045dacaa346291096566",
+      commit = "05a9ab28b53f71d1aece421ef32fee2cb857a843",
     },
     {
       "L3MON4D3/LuaSnip",
-      commit = "9bff06b570df29434a88f9c6a9cea3b21ca17208",
+      commit = "a7a4b4682c4b3e2ba82b82a4e6e5f5a0e79dec32",
       event = "InsertEnter",
+      run = "make install_jsregexp",
       dependencies = {
         "rafamadriz/friendly-snippets",
-        commit = "a6f7a1609addb4e57daa6bedc300f77f8d225ab7",
+        commit = "dcd4a586439a1c81357d5b9d26319ae218cc9479",
       },
     },
     {
