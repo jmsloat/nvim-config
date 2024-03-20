@@ -1,4 +1,3 @@
-
 local M = {
   "nvim-neorg/neorg",
   event = "VeryLazy",
@@ -11,11 +10,12 @@ local M = {
 }
 
 function M.config()
-  require('neorg').setup {
+  require("neorg").setup {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
       ["core.concealer"] = {}, -- Adds pretty icons to your documents
       ["core.ui.calendar"] = {}, -- calendar
+      ["core.export"] = {}, -- export
       ["core.completion"] = { config = { engine = "nvim-cmp", name = "[Neorg]" } },
       ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
@@ -24,8 +24,8 @@ function M.config()
           },
         },
       },
-    }
+    },
   }
 end
 
-return M
+return {}

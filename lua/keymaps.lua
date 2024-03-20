@@ -57,7 +57,7 @@ keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fo", ":Telescope lsp_document_symbols<CR>", opts)
+keymap("n", "<leader>fo", ":Telescope lsp_document_symbols symbol_width=75<CR>", opts)
 keymap("n", "<leader>fm", ":Telescope marks<CR>", opts)
 
 -- Git
