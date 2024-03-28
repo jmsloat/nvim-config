@@ -18,6 +18,10 @@ function M.config()
   vim.keymap.set("n", "<leader>r", function()
     ranger.open(true)
   end)
+
+  vim.keymap.set("n", "<leader>e", function()
+    ranger.open(true)
+  end)
 end
 
 return M
