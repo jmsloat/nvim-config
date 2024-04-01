@@ -26,6 +26,11 @@ function M.config()
       folder = "journal",
       template = "templates/daily-note.md",
     },
+    templates = {
+      subdir = "templates",
+      date_format = "%Y-%m-%d",
+      time_format = "%H:%M",
+    },
   }
 end
 
